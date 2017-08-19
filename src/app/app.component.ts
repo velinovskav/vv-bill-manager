@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {AuthenticationService} from './vv-login/authentication.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+
+  constructor(private authService: AuthenticationService) {
+  }
+
+  userLoggedIn() {
+    return this.authService.userLoggedIn();
+  }
+
+  logout() {
+    this.authService.doLogout();
+  }
 }

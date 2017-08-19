@@ -1,15 +1,14 @@
-export const Electricity = {label: 'Electricity', route: ''};
-export const Water = {label: 'Water', route: ''};
-export const Heating = {label: 'Heating', route: ''};
-export const InternetAndTV = {label: 'TV and Internet', route: ''};
-export const ServiceCharges = {label: 'Service charges', route: ''};
+export const Electricity = {key: 'electricity', label: 'Electricity', icon: 'lightbulb outline'}; // lightbulb outline
+export const Water = {key: 'water', label: 'Water', icon: 'opacity'};
+export const Heating = {key: 'heating', label: 'Heating', icon: 'autorenew'};
+export const InternetAndTV = {key: 'internetAndTv', label: 'TV and Internet', icon: 'cast connected'};
+export const ServiceCharges = {key: 'serviceCharges', label: 'Service charges', icon: 'home'};
 
 export class BillType {
   label: string;
-  route: string;
+  key: string;
+  icon: string;
 
-  constructor(label: string, route: string) {
-    this.label = label;
-    this.route = route;
+  constructor() {
   }
 }

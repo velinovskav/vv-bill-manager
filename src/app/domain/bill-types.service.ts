@@ -9,11 +9,15 @@ export class BillTypesService {
 
   getBilTypes() {
     return [
-      new BillType(Electricity.label, Electricity.route),
-      new BillType(Water.label, Water.route),
-      new BillType(Heating.label, Heating.route),
-      new BillType(InternetAndTV.label, InternetAndTV.route),
-      new BillType(ServiceCharges.label, ServiceCharges.route)
+      Object.assign(new BillType(), Electricity),
+      Object.assign(new BillType(), Water),
+      Object.assign(new BillType(), Heating),
+      Object.assign(new BillType(), InternetAndTV),
+      Object.assign(new BillType(), ServiceCharges)
     ];
+  }
+
+  getBillTypeByKey(type: string) {
+    return this.getBilTypes().find(billType => billType.key === type);
   }
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {FirebaseError, User} from 'firebase/app';
 import {Router} from '@angular/router';
 import {AngularFireAuth} from 'angularfire2/auth';
@@ -35,5 +35,9 @@ export class AuthenticationService {
   doLogout() {
     console.log('Log out');
     this.af.auth.signOut();
+  }
+
+  userLoggedIn() {
+    return this.currentUser != null;
   }
 }

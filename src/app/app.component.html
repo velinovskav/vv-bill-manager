@@ -1,8 +1,11 @@
 <div class="root-container">
-  <h1 >
+  <h1>
     Bill Manager
   </h1>
   <div class="root-content">
+    <div *ngIf="userLoggedIn()" class="logout-btn">
+      <button md-raised-button color="primary" (click)="logout()">Logout</button>
+    </div>
     <router-outlet></router-outlet>
   </div>
 </div>

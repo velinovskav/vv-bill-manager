@@ -1,10 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
 import {BillTypesService} from '../domain/bill-types.service';
-import {AuthenticationService} from '../vv-login/authentication.service';
-import {Bill} from '../domain/bill';
-import {BillType} from '../domain/bill-type';
-import {BillsService} from '../domain/bills.service';
+import {BillType, Electricity} from '../domain/bill-type';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-vv-overview',
@@ -14,22 +11,15 @@ import {BillsService} from '../domain/bills.service';
 export class VvOverviewComponent implements OnInit {
 
   billTypes: Array<any>;
-  bills: Observable<Array<Bill>>;
 
-  constructor(private billTypesService: BillTypesService, private billsService: BillsService,
-              private authService: AuthenticationService) {
+  constructor(private billTypesService: BillTypesService, private router: Router) {
   }
 
   ngOnInit() {
     this.billTypes = this.billTypesService.getBilTypes();
   }
 
-  getBills(type: BillType) {
-    this.bills = this.billsService.getBillsForType(type);
+  getRoute(type: BillType) {
+    return '/overview/' + type.key;
   }
-
-  logout() {
-    this.authService.doLogout();
-  }
-
 }

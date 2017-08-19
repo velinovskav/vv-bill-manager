@@ -1,8 +1,7 @@
-import {BillType} from './bill-type';
 import {PaymentStatus} from './payment-status';
 
 export class Bill {
-  billType?: BillType;
+  billType?: string;
   paymentStatus?: PaymentStatus;
   validFor: Date;
   value?: number;

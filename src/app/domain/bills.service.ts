@@ -13,8 +13,8 @@ export class BillsService {
   getBillsForType(type: BillType): Observable<Array<Bill>> {
     return this.db.list('/bills', {
       query: {
-        orderByChild: 'validFor',
-        equalTo: type.label
+        orderByChild: 'billType',
+        equalTo: type.key
       }
     });
   }

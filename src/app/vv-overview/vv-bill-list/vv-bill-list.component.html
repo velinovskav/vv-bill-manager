@@ -1,0 +1,7 @@
+<div class="bill-list-container">
+  <md-list>
+    <md-list-item *ngFor="let bill of bills | async">
+      <app-vv-bill-item [bill]="bill"></app-vv-bill-item>
+    </md-list-item>
+  </md-list>
+</div>

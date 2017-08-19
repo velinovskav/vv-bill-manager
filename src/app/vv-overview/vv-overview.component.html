@@ -2,17 +2,12 @@
   <nav md-tab-nav-bar>
     <a md-tab-link
        *ngFor="let type of billTypes"
-       (click)="getBills(type)"
-       routerLinkActive #rla="routerLinkActive">
+       [routerLink]="getRoute(type)"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive">
       {{type.label}}
     </a>
   </nav>
 
-  <button md-raised-button color="primary" (click)="logout()">Logout</button>
-
-  <md-list>
-    <md-list-item *ngFor="let bill of bills | async">
-      <app-vv-bill-item [bill]="bill"></app-vv-bill-item>
-    </md-list-item>
-  </md-list>
+  <router-outlet></router-outlet>
 </div>

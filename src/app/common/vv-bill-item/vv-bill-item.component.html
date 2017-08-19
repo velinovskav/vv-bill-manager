@@ -1,5 +1,20 @@
-<div>
-  <md-icon md-list-icon>input</md-icon>
-  <h4 md-line>{{bill.value}}</h4>
-  <p md-line> {{bill.validFor | date}} </p>
+<div class="bill-item-container">
+  <div class="bill-item-icon">
+    <md-icon md-font-set="material-icons" md-list-icon>{{getBillTypeIcon()}}</md-icon>
+  </div>
+  <div class="bill-item-content">
+    <div class="bill-item-content-left">
+      <h4 md-line>
+        {{bill.validFor | date:'MMMM-y'}}
+      </h4>
+    </div>
+    <div class="bill-item-content-right">
+      <div>
+        {{bill.value}}
+      </div>
+      <div *ngIf="bill.paymentStatus.paid" class="bill-item-payment-status">
+        Paid <span class="bill-item-paid-online" *ngIf="bill.paymentStatus.online">(online)</span>
+      </div>
+    </div>
+  </div>
 </div>
