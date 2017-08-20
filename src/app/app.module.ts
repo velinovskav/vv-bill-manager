@@ -6,7 +6,6 @@ import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
 import {AngularFireModule} from 'angularfire2';
-import {environment} from '../environments/environment';
 import {VvLoginComponent} from './vv-login/vv-login.component';
 import {
   MdButtonModule, MdCardModule, MdIconModule, MdInputModule, MdLineModule, MdListModule,
@@ -23,6 +22,15 @@ import {VvBillItemComponent} from './common/vv-bill-item/vv-bill-item.component'
 import {VvNewBillComponent} from './vv-new-bill/vv-new-bill.component';
 import {VvBillListComponent} from './vv-overview/vv-bill-list/vv-bill-list.component';
 
+export const firebaseConfig = {
+  apiKey: 'AIzaSyCxDDIb51o2JYS0_S6hrIe3lweYRq7XemA',
+  authDomain: 'vv-bill-manager.firebaseapp.com',
+  databaseURL: 'https://vv-bill-manager.firebaseio.com',
+  projectId: 'vv-bill-manager',
+  storageBucket: 'vv-bill-manager.appspot.com',
+  messagingSenderId: '230346116302'
+};
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +46,7 @@ import {VvBillListComponent} from './vv-overview/vv-bill-list/vv-bill-list.compo
     FormsModule, ReactiveFormsModule,
     HttpModule,
     routing,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     AngularFireDatabaseModule,
     MdCardModule, MdInputModule, MdButtonModule, MdTabsModule, MdListModule, MdIconModule, MdLineModule

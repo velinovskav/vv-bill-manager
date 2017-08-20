@@ -13,8 +13,8 @@ import {BillTypesService} from '../domain/bill-types.service';
 })
 export class VvNewBillComponent implements OnInit, OnDestroy  {
   newBillForm: FormGroup;
+  billType: BillType;
   private bill: Bill;
-  private billType: BillType;
   private sub: any;
 
   constructor(private fb: FormBuilder, private billsService: BillsService, private billTypeService: BillTypesService,
