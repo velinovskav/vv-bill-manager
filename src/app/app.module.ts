@@ -20,6 +20,7 @@ import {VvOverviewComponent} from './vv-overview/vv-overview.component';
 import {BillTypesService} from './domain/bill-types.service';
 import {BillsService} from './domain/bills.service';
 import {VvBillItemComponent} from './common/vv-bill-item/vv-bill-item.component';
+import {VvNewBillComponent} from './vv-new-bill/vv-new-bill.component';
 import {VvBillListComponent} from './vv-overview/vv-bill-list/vv-bill-list.component';
 
 @NgModule({
@@ -28,6 +29,7 @@ import {VvBillListComponent} from './vv-overview/vv-bill-list/vv-bill-list.compo
     VvLoginComponent,
     VvOverviewComponent,
     VvBillItemComponent,
+    VvNewBillComponent,
     VvBillListComponent
   ],
   imports: [

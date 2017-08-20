@@ -1,0 +1,30 @@
+<form [formGroup]="newBillForm" (ngSubmit)="save()">
+  <md-card class="login">
+
+    <md-card-title>
+      {{billType.label}}
+    </md-card-title>
+
+    <md-card-content class="new-bill-container">
+
+      <md-input-container>
+        <input mdInput placeholder="Month" formControlName="validFor" type="month">
+      </md-input-container>
+
+      <md-input-container>
+        <input mdInput placeholder="Value" formControlName="value" type="number">
+      </md-input-container>
+
+      <div formGroupName="paymentStatus">
+        <input mdCheckbox type="checkbox" formControlName="online">Paid online
+      </div>
+
+    </md-card-content>
+
+    <md-card-actions class="login-buttons">
+      <a md-button (click)="cancel()">Cancel</a>
+      <button md-raised-button color="primary" [disabled]="newBillForm.invalid">Save</button>
+    </md-card-actions>
+
+  </md-card>
+</form>

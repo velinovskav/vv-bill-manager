@@ -1,0 +1,4 @@
+.new-bill-container {
+  display: flex;
+  flex-direction: row;
+}

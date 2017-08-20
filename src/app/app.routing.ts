@@ -3,6 +3,7 @@ import {ModuleWithProviders} from '@angular/core';
 import {VvLoginComponent} from './vv-login/vv-login.component';
 import {VvOverviewComponent} from './vv-overview/vv-overview.component';
 import {VvBillListComponent} from './vv-overview/vv-bill-list/vv-bill-list.component';
+import {VvNewBillComponent} from './vv-new-bill/vv-new-bill.component';
 
 const APP_ROUTES: Routes = [
   {
@@ -18,6 +19,9 @@ const APP_ROUTES: Routes = [
       {path: 'internetAndTv', component: VvBillListComponent},
       {path: 'serviceCharges', component: VvBillListComponent}
     ]
+  },
+  {
+    path: 'new/:billType', component: VvNewBillComponent
   },
   {
     path: '', redirectTo: '/overview', pathMatch: 'full'

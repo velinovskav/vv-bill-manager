@@ -3,7 +3,7 @@ import {Observable} from 'rxjs/Observable';
 import {BillType} from '../../domain/bill-type';
 import {Bill} from '../../domain/bill';
 import {BillsService} from '../../domain/bills.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {BillTypesService} from '../../domain/bill-types.service';
 
 @Component({
@@ -17,11 +17,15 @@ export class VvBillListComponent implements OnInit {
   billType: BillType;
 
   constructor(private billTypeService: BillTypesService, private billsService: BillsService,
-              private activateRoute: ActivatedRoute) {
+              private router: Router, private activateRoute: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.billType = this.billTypeService.getBillTypeByKey(this.activateRoute.routeConfig.path);
     this.bills = this.billsService.getBillsForType(this.billType);
+  }
+
+  addNew() {
+    this.router.navigate(['/new', this.billType.key]);
   }
 }

@@ -1,4 +1,8 @@
 <div class="bill-list-container">
+  <div class="add-bill-btn">
+    <button md-mini-fab (click)="addNew()"><md-icon>add</md-icon></button>
+  </div>
+
   <md-list>
     <md-list-item *ngFor="let bill of bills | async">
       <app-vv-bill-item [bill]="bill"></app-vv-bill-item>
