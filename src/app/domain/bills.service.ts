@@ -16,6 +16,10 @@ export class BillsService {
         orderByChild: 'billType',
         equalTo: type.key
       }
+    }).map((data) => {
+      // order in desc order
+      data.sort((a, b) => a.validFor < b.validFor ? 1 : -1);
+      return data;
     });
   }
 
